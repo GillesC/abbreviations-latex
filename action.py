@@ -1,5 +1,6 @@
 # be sure that your files are located in the same folder as this script
 import re
+import os
 
 files = ["abbr.tex"]
 
