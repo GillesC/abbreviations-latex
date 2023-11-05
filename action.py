@@ -15,7 +15,7 @@ REGEX = r"^\\newacronym(\[(?P<plural>.*)\])?\{(?P<key>.*)\}\{(?P<abbr>.*)\}\{(?P
 
 abbr = {}
 
-for file_name in args:
+for file_name in files:
     with open(file_name) as f:
        for line in f:
         line = line.strip()
