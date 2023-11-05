@@ -33,6 +33,7 @@ jobs:
           mkdir -p arxiv  # Create the 'arxiv' directory if it doesn't exist
           mv abbr.tex arxiv/abbr_${timestamp}.tex
           mv abbr-sorted.tex abbr.tex
+          mv to-be-merged/* arxiv/
           
       - name: commit files
         run: |
