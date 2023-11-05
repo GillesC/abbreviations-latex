@@ -1,4 +1,4 @@
-name: Sort abbreviations
+name: Merge and sort abbreviations
 on: 
   push:
    paths:
