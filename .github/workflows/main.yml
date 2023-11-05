@@ -7,7 +7,7 @@ jobs:
     steps:
 
       - name: checkout repo content
-        uses: actions/checkout@v2 # checkout the repository content to github runner
+        uses: actions/checkout@v4 # checkout the repository content to github runner
 
       - name: setup python
         uses: actions/setup-python@v4
@@ -23,6 +23,13 @@ jobs:
         run: |
           # Execute the Python script to modify the main.tex file
           python action.py
+
+      - name: Move old to arxiv folder and update names
+        run: |
+          timestamp=$(date +'%Y%m%d%H%M%S')
+          mkdir -p arxiv  # Create the 'arxiv' directory if it doesn't exist
+          mv abbr.tex arxiv/abbr_${timestamp}.tex
+          mv sorted-abbr.tex abbr.tex
           
       - name: commit files
         run: |
@@ -32,7 +39,7 @@ jobs:
           git diff-index --quiet HEAD || (git commit -a -m "sorted abbrviations" --allow-empty)
           
       - name: push changes
-        uses: ad-m/github-push-action@v0.6.0
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main 
