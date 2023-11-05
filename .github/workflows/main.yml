@@ -29,7 +29,7 @@ jobs:
           timestamp=$(date +'%Y%m%d%H%M%S')
           mkdir -p arxiv  # Create the 'arxiv' directory if it doesn't exist
           mv abbr.tex arxiv/abbr_${timestamp}.tex
-          mv sorted-abbr.tex abbr.tex
+          mv abbr-sorted.tex abbr.tex
           
       - name: commit files
         run: |
