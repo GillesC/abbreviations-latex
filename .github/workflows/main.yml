@@ -3,6 +3,7 @@ on:
   push:
    paths:
       - 'abbr.tex' # only run when abbr. tex is changed
+      - "to-be-merged/*"
 
 jobs:
   build:
