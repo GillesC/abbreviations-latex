@@ -5,7 +5,9 @@ import os
 files = ["abbr.tex"]
 
 folder_path = "to-be-merged/"
-to_be_merged = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+to_be_merged = []
+if os.path.exists(folder_path) and os.path.isdir(folder_path):
+    to_be_merged = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
 
 files.extend(to_be_merged)
 
