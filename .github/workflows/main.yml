@@ -1,5 +1,8 @@
 name: Sort abbreviations
-on: [push]
+on: 
+  push:
+   paths:
+      - 'abbr.tex' # only run when abbr. tex is changed
 
 jobs:
   build:
