@@ -22,6 +22,11 @@ jobs:
       #   run: |
       #     python -m pip install --upgrade pip
       #     pip install -r requirements.txt
+
+      - name: pull files
+        run: |
+          git reset --hard HEAD
+          git pull
           
       - name: Sort file
         run: |
@@ -41,8 +46,6 @@ jobs:
           
       - name: commit files
         run: |
-          git reset --hard HEAD
-          git pull
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
