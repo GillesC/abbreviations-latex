@@ -22,7 +22,7 @@ jobs:
       - name: Sort file
         run: |
           # Execute the Python script to modify the main.tex file
-          python main.py
+          python action.py
           
       - name: commit files
         run: |
